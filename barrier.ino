@@ -93,7 +93,7 @@ void loop() {
 void applyNight(){
   Serial.println("applyNight"); 
   
-  ArrowStates arrowState = getArrowState();
+  int arrowState = getArrowState();
   printArrowState(arrowState);
   
   //Если стрела опущена 
@@ -219,7 +219,7 @@ void openArrow(){
  *  Когда на концевике +5 то он в КРАЙНЕМ положении 
  *  в остальных случиях GND
 */
-ArrowStates getArrowState(){    
+int getArrowState(){    
   bool close = digitalRead(SW_CLOSE_PIN);
   bool open  = digitalRead(SW_OPEN_PIN);
   
